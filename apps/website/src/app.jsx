@@ -1,11 +1,20 @@
 import React from "react"
+import { BrowserRouter, NavLink, Route, Routes, useLocation } from "react-router-dom";
+
+import "./app.css";
 
 export default function App() {
     return (
-        <main>
+        <BrowserRouter>
             <div>
-                <p style={{ backgroundColor: "green" }}>The page works!</p>
+                <header>
+                    <nav>
+                        <menu></menu>
+                    </nav>
+                </header>
+                <Routes></Routes>
+                <footer></footer>
             </div>
-        </main>
+        </BrowserRouter>
     )
 }
