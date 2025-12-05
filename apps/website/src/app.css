@@ -20,6 +20,10 @@
     object-fit: contain;
 }
 
-.sign-in-button {
+button {
     color: black;
+}
+
+.menu-button {
+    margin-left: 5px;
 }
