@@ -5,8 +5,14 @@
 }
 
 html, body {
+    height: 100vh;
     background: linear-gradient(to bottom, #1eb53a 0vh, #1eb53a 33vh, white 34vh, white 66vh, #0072c6 67vh, #0072c6 100vh);
     background-attachment: fixed;
+}
+
+#root {
+    display: flex;
+    flex-direction: column;
 }
 
 header {
@@ -29,4 +35,16 @@ button {
 
 .menu-button {
     margin-left: 5px;
+}
+
+.login-card {
+    margin-bottom: 60px; /* Keep login card centered in the center of the white of the flag background */
+}
+
+p {
+    margin-bottom: 0;
+}
+
+.margin-top-10 {
+    margin-top: 10px;
 }
