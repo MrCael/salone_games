@@ -16,7 +16,7 @@ export default function App() {
                     <img className="main-logo" src="logoipsum-242.png" alt="logo" />
                 </NavLink>
                 <Button className="float-end menu-button"><i className="bi bi-box-arrow-in-right"></i>&nbsp;Sign In</Button>
-                <NavLink className="btn btn-primary float-end menu-button" to="/about"><i class="bi bi-people"></i>&nbsp;About</NavLink>
+                <NavLink className="btn btn-primary float-end menu-button" to="/about"><i className="bi bi-people"></i>&nbsp;About</NavLink>
             </header>
             <Routes>
                 <Route path="/" element={<></>} exact />

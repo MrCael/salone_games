@@ -4,14 +4,17 @@
   box-sizing: border-box;
 }
 
-#root {
-    padding: 10px;
-    min-height: 100vh;
-    background-image: url("salone-flag.png");
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
+html, body {
+    background: linear-gradient(to bottom, #1eb53a 0vh, #1eb53a 33vh, white 34vh, white 66vh, #0072c6 67vh, #0072c6 100vh);
     background-attachment: fixed;
+}
+
+header {
+    padding: 10px;
+    border-bottom: 2px solid black;
+    position: sticky;
+    top: 0;
+    background-color: #1eb53a;
 }
 
 .main-logo {
