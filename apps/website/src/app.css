@@ -29,15 +29,11 @@ header {
     object-fit: contain;
 }
 
-button {
-    color: black;
-}
-
 .menu-button {
     margin-left: 5px;
 }
 
-.login-card {
+.flag-white-centered {
     margin-bottom: 60px; /* Keep login card centered in the center of the white of the flag background */
 }
 
@@ -47,4 +43,8 @@ p {
 
 .margin-top-10 {
     margin-top: 10px;
+}
+
+input[type="checkbox"] {
+    margin-right: 5px;
 }
