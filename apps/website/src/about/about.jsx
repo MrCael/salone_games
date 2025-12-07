@@ -2,7 +2,7 @@ import React from "react";
 
 export function About() {
     return (
-        <main>
+        <main className="d-flex flex-grow-1 translucent-background">
             <div className="description">
                 <p>My name is Cael Erickson, at the time of creating this website I am a Junior at Brigham Young University.</p>
                 <p>I decided to make this website after completing my web development class and falling in love with it.</p>

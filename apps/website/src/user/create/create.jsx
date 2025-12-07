@@ -21,7 +21,10 @@ function UserData({ setCurrentPage }) {
     );
 }
 
-function ContactInfo() {
+function ContactInfo({ setCurrentPage }) {
+    function nextPage() {
+        setCurrentPage("confirmEmail");
+    }
 
     return (
         <>
@@ -36,8 +39,19 @@ function ContactInfo() {
             <p>
                 <label><input type="checkbox" id="text_notifications" />SMS</label>
             </p>
-            <Button className="form-control margin-top-10">Complete</Button>
+            <Button className="form-control margin-top-10" onClick={nextPage}>Continue</Button>
         </>
+    );
+}
+
+function ConfirmEmail() {
+    return (
+        <div className="text-center">
+            <h2>Verify Your Email</h2>
+            <p>Please enter the code sent to placeholder@email.com within 10 minutes to confirm your email</p>
+            <input type="text" id="confirm_email" className="form-control margin-top-10 w-50 mx-auto" />
+            <Button className="form-control margin-top-10 w-50">Confirm</Button>
+        </div>
     );
 }
 
@@ -45,11 +59,12 @@ export function CreateUser() {
     const [currentPage, setCurrentPage] = useState("userData");
 
     return (
-        <main className="d-flex flex-grow-1 justify-content-center align-items-center">
+        <main className="d-flex flex-grow-1 justify-content-center align-items-center translucent-background">
             <div className="card w-auto h-auto flag-white-centered">
                 <div className="card-body">
                     {currentPage == "userData" && <UserData setCurrentPage={setCurrentPage} />}
-                    {currentPage == "contactInfo" && <ContactInfo />}
+                    {currentPage == "contactInfo" && <ContactInfo setCurrentPage={setCurrentPage} />}
+                    {currentPage == "confirmEmail" && <ConfirmEmail />}
                 </div>
             </div>
         </main>

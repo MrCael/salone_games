@@ -15,6 +15,10 @@ html, body {
     flex-direction: column;
 }
 
+.translucent-background {
+    background-color: #00000040; /* 25% opaque black background */
+}
+
 header {
     padding: 10px;
     border-bottom: 2px solid black;
