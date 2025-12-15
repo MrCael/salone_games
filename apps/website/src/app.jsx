@@ -5,8 +5,9 @@ import { useState } from "react";
 import { BrowserRouter, NavLink, Route, Routes } from "react-router-dom";
 import { AuthState } from "./login/authState";
 import { About } from "./about/about";
-import { Login } from "./login/login";
 import { CreateUser } from "./user/create/create";
+import { Login } from "./login/login";
+import { UserProfile } from "./user/profile/profile";
 
 import "bootstrap-icons/font/bootstrap-icons.css";
 import './custom.scss';
@@ -30,6 +31,7 @@ export default function App() {
                 <Route path="/about" element={<About />} />
                 <Route path="/user/create" element={<CreateUser />} />
                 <Route path="/login" element={<Login />} />
+                <Route path="/user/profile" element={<UserProfile />} />
             </Routes>
             <footer></footer>
         </BrowserRouter>

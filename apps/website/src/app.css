@@ -52,3 +52,25 @@ p {
 input[type="checkbox"] {
     margin-right: 5px;
 }
+
+.nav {
+    border: 0;
+}
+
+.tab {
+    padding: 10px;
+    border: 0;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+    background-color: color-mix(in oklch, white, black 10%);
+}
+
+.tab.active,
+.tab:hover {
+    background-color: white;
+}
+
+.profile-card {
+    border: 0;
+    border-top-left-radius: 0;
+}
