@@ -17,6 +17,11 @@ export default function App() {
     const [activePage, setActivePage] = useState("/");
     const [authState, setAuthState] = useState(AuthState.Unauthenticated);
 
+    function logOut() {
+        setActivePage("/");
+        setAuthState(AuthState.Unauthenticated);
+    }
+
     return (
         <BrowserRouter>
             <header>
@@ -24,13 +29,14 @@ export default function App() {
                     <img className="main-logo" src="logoipsum-242.png" alt="logo" />
                 </NavLink>
                 {activePage != "/login" && authState == AuthState.Unauthenticated && <NavLink className="btn btn-primary float-end menu-button" to="/login" onClick={() => setActivePage("/login")}><i className="bi bi-box-arrow-in-right"></i>&nbsp;Sign In</NavLink>}
+                {activePage != "/login" && authState == AuthState.Authenticated && <NavLink className="btn btn-primary float-end menu-button" to="/" onClick={logOut}><i className="bi bi-box-arrow-right"></i>&nbsp;Log Out</NavLink>}
                 {activePage != "/about" && <NavLink className="btn btn-primary float-end menu-button" to="/about" onClick={() => setActivePage("/about")}><i className="bi bi-people"></i>&nbsp;About</NavLink>}
             </header>
             <Routes>
                 <Route path="/" element={<></>} exact />
                 <Route path="/about" element={<About />} />
-                <Route path="/user/create" element={<CreateUser />} />
-                <Route path="/login" element={<Login />} />
+                <Route path="/user/create" element={<CreateUser setActivePage={setActivePage} setAuthState={setAuthState} />} />
+                <Route path="/login" element={<Login setActivePage={setActivePage} setAuthState={setAuthState} />} />
                 <Route path="/user/profile" element={<UserProfile />} />
             </Routes>
             <footer></footer>

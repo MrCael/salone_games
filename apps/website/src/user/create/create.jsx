@@ -3,6 +3,7 @@ import Button from "react-bootstrap/Button";
 
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { AuthState } from "../../login/authState";
 
 function UserData({ setCurrentPage }) {
     function nextPage() {
@@ -45,11 +46,13 @@ function ContactInfo({ setCurrentPage }) {
     );
 }
 
-function ConfirmEmail() {
+function ConfirmEmail({ setActivePage, setAuthState }) {
     const navigate = useNavigate();
 
     function nextPage() {
         navigate("/user/profile");
+        setActivePage("/user/profile");
+        setAuthState(AuthState.Authenticated);
     }
 
     return (
@@ -62,7 +65,7 @@ function ConfirmEmail() {
     );
 }
 
-export function CreateUser() {
+export function CreateUser({ setActivePage, setAuthState }) {
     const [currentPage, setCurrentPage] = useState("userData");
 
     return (
@@ -71,7 +74,7 @@ export function CreateUser() {
                 <div className="card-body">
                     {currentPage == "userData" && <UserData setCurrentPage={setCurrentPage} />}
                     {currentPage == "contactInfo" && <ContactInfo setCurrentPage={setCurrentPage} />}
-                    {currentPage == "confirmEmail" && <ConfirmEmail />}
+                    {currentPage == "confirmEmail" && <ConfirmEmail setActivePage={setActivePage} setAuthState={setAuthState} />}
                 </div>
             </div>
         </main>

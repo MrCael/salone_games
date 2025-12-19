@@ -2,12 +2,15 @@ import React from "react";
 import Button from "react-bootstrap/Button";
 
 import { NavLink, useNavigate } from "react-router-dom";
+import { AuthState } from "./authState";
 
-export function Login() {
+export function Login({ setActivePage, setAuthState }) {
     const navigate = useNavigate();
 
-    function onSignIn() {
+    function signIn() {
         navigate("/user/profile");
+        setActivePage("/user/profile");
+        setAuthState(AuthState.Authenticated);
     }
 
     return (
@@ -18,7 +21,7 @@ export function Login() {
                     <input type="text" className="form-control" style={{ width: "300px" }} />
                     <p>Password:</p>
                     <input type="password" className="form-control" />
-                    <Button className="form-control margin-top-10" onClick={onSignIn}>Sign In</Button>
+                    <Button className="form-control margin-top-10" onClick={signIn}>Sign In</Button>
                     <p className="margin-top-10">Don't have an account? Create one <NavLink to="/user/create">here!</NavLink></p>
                 </div>
             </div>
