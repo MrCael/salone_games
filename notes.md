@@ -11,3 +11,7 @@ To override Bootstrap Sass variables, first remove the Bootstrap import from you
 ```
 
 Then import that file in your main `.js` or `.jsx` file. Normally `.scss` files need to be compiled in to CSS before they are used, but Vite will do that for me automatically.
+
+# TODO
+
+- ELO System?
