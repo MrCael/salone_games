@@ -77,11 +77,11 @@ input[type="checkbox"] {
 
 .big-icon {
     font-size: 60px;
-    height: 75px;
 }
 
 .personal-info-parent {
     margin-top: 20px;
+    margin-bottom: 20px;
 }
 
 .personal-info {

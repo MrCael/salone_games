@@ -8,13 +8,14 @@ export function PersonalInfo() {
                 <div className="progress-bar bg-secondary" style={{ width: "25%" }}></div>
             </div>
             <div className="d-flex flex-row personal-info-parent">
-                <div className="d-flex flex-column justify-content-center">
-                    <i className="bi bi-person-circle big-icon"></i> {/* This should display an actual profile image */}
-                    <p className="text-center">Avatar</p>
+                <div className="d-flex flex-column">
+                    <p className="text-center align-text-bottom">
+                        <i className="bi bi-person-circle big-icon"></i> {/* This should display an actual profile image */}
+                    </p>
+                    <p className="text-center">Display Name</p>
                 </div>
                 <div className="personal-info">
                     <p>Username:</p>
-                    <p>Display Name:</p>
                     <p>Roles:</p>
                     <p>Bio:</p>
                 </div>
