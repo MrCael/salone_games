@@ -15,3 +15,7 @@ Then import that file in your main `.js` or `.jsx` file. Normally `.scss` files 
 # TODO
 
 - ELO System?
+
+# Misc. Notes
+
+Using a `checked` attribute on a `radio` or `checkbox` html input will lock the input. To mark it as default and allow the user to edit it, use the `defaultChecked` attribute.

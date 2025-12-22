@@ -10,9 +10,9 @@ export function GameStats() {
             <ul>
                 <li>High Score:</li>
                 <li>Rank:</li>
-                <li>Wins:</li>
-                <li>Losses:</li>
                 <li>Games Played:</li>
+                <li>Wins: (win%?)</li>
+                <li>Losses: (loss%)</li>
                 <li>Last Played:</li>
             </ul>
         </>

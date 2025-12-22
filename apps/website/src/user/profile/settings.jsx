@@ -4,21 +4,36 @@ export function Settings() {
     return (
         <>
             <p>Theme:</p>
-            <ul>
-                <li>Light</li>
-                <li>Dark</li>
-                <li>System Default</li>
-            </ul>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="theme" id="light" />
+                <label class="form-check-label" for="light">Light</label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="theme" id="dark" />
+                <label class="form-check-label" for="dark">Dark</label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="theme" id="system" defaultChecked />efrr
+                <label class="form-check-label" for="system">System Default</label>
+            </div>
             <p>Notifications:</p>
-            <ul>
-                <li>Text</li>
-                <li>Email</li>
-            </ul>
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="text" />
+                <label class="form-check-label" for="text">Text</label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="email" />
+                <label class="form-check-label" for="email">Email</label>
+            </div>
             <p>Privacy:</p>
-            <ul>
-                <li>Show Stats</li>
-                <li>Allow Friend Requests</li>
-            </ul>
+            <div class="form-check form-switch">
+                <input class="form-check-input" type="checkbox" role="switch" id="stats" defaultChecked />
+                <label class="form-check-label" for="stats">Show Stats</label>
+            </div>
+            <div class="form-check form-switch">
+                <input class="form-check-input" type="checkbox" role="switch" id="friend-requests" defaultChecked />
+                <label class="form-check-label" for="friend-requests">Allow Friend Requests</label>
+            </div>
         </>
     );
 }

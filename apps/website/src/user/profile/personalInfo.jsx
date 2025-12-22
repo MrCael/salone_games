@@ -21,7 +21,7 @@ export function PersonalInfo() {
                 </div>
             </div>
             <p>Badges:</p>
-            <div className="bg-light badge-box overflow-auto"></div>
+            <div className="bg-light profile-content-box overflow-auto"></div>
             <p>Joined On:</p>
         </>
     );
