@@ -13,16 +13,16 @@ export function Settings() {
                 <label class="form-check-label" for="dark">Dark</label>
             </div>
             <div class="form-check">
-                <input class="form-check-input" type="radio" name="theme" id="system" defaultChecked />efrr
+                <input class="form-check-input" type="radio" name="theme" id="system" defaultChecked />
                 <label class="form-check-label" for="system">System Default</label>
             </div>
             <p>Notifications:</p>
-            <div class="form-check">
-                <input class="form-check-input" type="checkbox" id="text" />
+            <div class="form-check form-switch">
+                <input class="form-check-input" type="checkbox" role="switch" id="text" />
                 <label class="form-check-label" for="text">Text</label>
             </div>
-            <div class="form-check">
-                <input class="form-check-input" type="checkbox" id="email" />
+            <div class="form-check form-switch">
+                <input class="form-check-input" type="checkbox" role="switch" id="email" />
                 <label class="form-check-label" for="email">Email</label>
             </div>
             <p>Privacy:</p>
