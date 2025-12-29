@@ -2,79 +2,21 @@ import React from "react";
 import Button from "react-bootstrap/Button";
 
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
-import { AuthState } from "../../login/authState";
-
-function UserData({ setCurrentPage }) {
-    function nextPage() {
-        setCurrentPage("contactInfo");
-    }
-
-    return (
-        <>
-            <p>Choose a Username:</p>
-            <input type="text" id="username" className="form-control" />
-            <p>Choose a Password:</p>
-            <input type="password" id="password" className="form-control" />
-            <p>Confirm Password:</p>
-            <input type="password" id="confirm-password" className="form-control" />
-            <Button className="form-control margin-top-10" onClick={nextPage}>Continue</Button>
-        </>
-    );
-}
-
-function ContactInfo({ setCurrentPage }) {
-    function nextPage() {
-        setCurrentPage("confirmEmail");
-    }
-
-    return (
-        <>
-            <p>Email:</p>
-            <input type="text" id="email" className="form-control" />
-            <p>Phone:</p>
-            <input type="text" id="phone" className="form-control" />
-            <p className="margin-top-10">Notification Preferences:</p>
-            <p>
-                <label><input type="checkbox" id="email_notifications" />Email</label>
-            </p>
-            <p>
-                <label><input type="checkbox" id="text_notifications" />SMS</label>
-            </p>
-            <Button className="form-control margin-top-10" onClick={nextPage}>Continue</Button>
-        </>
-    );
-}
-
-function ConfirmEmail({ setActivePage, setAuthState }) {
-    const navigate = useNavigate();
-
-    function nextPage() {
-        navigate("/user/profile");
-        setActivePage("/user/profile");
-        setAuthState(AuthState.Authenticated);
-    }
-
-    return (
-        <div className="text-center">
-            <h2>Verify Your Email</h2>
-            <p>Please enter the code sent to placeholder@email.com within 10 minutes to confirm your email</p>
-            <input type="text" id="confirm_email" className="form-control margin-top-10 w-50 mx-auto" />
-            <Button className="form-control margin-top-10 w-50" onClick={nextPage}>Confirm</Button>
-        </div>
-    );
-}
+import { UserData } from "./userData";
+import { ContactInfo } from "./contactInfo";
+import { ConfirmEmail } from "./confirmEmail";
 
 export function CreateUser({ setActivePage, setAuthState }) {
     const [currentPage, setCurrentPage] = useState("userData");
+    const [user, setUser] = useState({});
 
     return (
         <main className="d-flex flex-grow-1 justify-content-center align-items-center translucent-background">
             <div className="card w-auto h-auto flag-white-centered">
                 <div className="card-body">
-                    {currentPage == "userData" && <UserData setCurrentPage={setCurrentPage} />}
-                    {currentPage == "contactInfo" && <ContactInfo setCurrentPage={setCurrentPage} />}
-                    {currentPage == "confirmEmail" && <ConfirmEmail setActivePage={setActivePage} setAuthState={setAuthState} />}
+                    {currentPage == "userData" && <UserData user={user} setUser={setUser} setCurrentPage={setCurrentPage} />}
+                    {currentPage == "contactInfo" && <ContactInfo user={user} setUser={setUser} setCurrentPage={setCurrentPage} />}
+                    {currentPage == "confirmEmail" && <ConfirmEmail user={user} setUser={setUser} setActivePage={setActivePage} setAuthState={setAuthState} />}
                 </div>
             </div>
         </main>
