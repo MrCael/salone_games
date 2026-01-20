@@ -13,15 +13,17 @@ export function ContactInfo({ user, setUser, setCurrentPage }) {
     const [byPhone, setByPhone] = useState(false);
 
     const emailFormat = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    const phoneFormat = /[0-9]*3-[0-9]*3-[0-9]*4/;
 
     function nextPage() {
         const emailIsValid = emailFormat.test(email);
+        const phoneIsValid = phoneFormat.test(phone);
 
-        if (email != "" && emailIsValid && phone != "") {
+        if (email != "" && emailIsValid && phone != "" && phoneIsValid) {
             setUser({ ...user, email: email, phone: phone, byEmail: byEmail, byPhone: byPhone });
             setCurrentPage("confirmEmail");
         } else {
-            if (email == "") {
+            if (email == "") { /// Update these error displays to incorporate the phone validation ///
                 setShowEmailError(true);
             } else if (!emailIsValid) {
                 setShowValidEmailError(true);

@@ -1,7 +1,7 @@
 import React from "react";
 import Button from "react-bootstrap/Button";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { AuthState } from "../../login/authState";
 
@@ -15,6 +15,10 @@ export function ConfirmEmail({ user, setUser, setActivePage, setAuthState }) {
         setAuthState(AuthState.Authenticated);
         navigate("/user/profile");
     }
+
+    useEffect(() => {
+        console.log(user);
+    }, [user]);
 
     return (
         <div className="text-center">
