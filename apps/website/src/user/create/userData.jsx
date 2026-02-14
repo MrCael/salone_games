@@ -16,23 +16,9 @@ export function UserData({ user, setUser, setCurrentPage }) {
             setUser({ ...user, userName: userName, password: password });
             setCurrentPage("contactInfo");
         } else {
-            if (userName == "") {
-                setShowUserNameError(true);
-            } else {
-                setShowUserNameError(false);
-            }
-
-            if (password == "") {
-                setShowPasswordError(true);
-            } else {
-                setShowPasswordError(false);
-            }
-
-            if (confirmPassword == "") {
-                setShowConfirmPasswordError(true);
-            } else {
-                setShowConfirmPasswordError(false);
-            }
+            setShowUserNameError(userName == "");
+            setShowPasswordError(password == "");
+            setShowConfirmPasswordError(confirmPassword == "");
         }
     }
 
